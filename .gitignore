@@ -1,0 +1,24 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# MAUI and Android
+*.apk
+*.ap_
+*.dbmdl
+*.db
+*.userprefs
+platforms/
+app/build/
+
+# Rider, JetBrains
+.idea/
+
+# Systemowe
+*.DS_Store
+Thumbs.db
