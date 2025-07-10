@@ -1,8 +1,8 @@
 ﻿namespace MAUI_MobileApp
 {
-    public partial class AppShell : Shell
+    public partial class DetailsPage : ContentPage
     {
-        public AppShell()
+        public DetailsPage()
         {
             InitializeComponent();
         }

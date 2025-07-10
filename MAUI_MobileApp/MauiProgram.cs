@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MAUI_MobileApp.View;
+using Microsoft.Extensions.Logging;
 
 namespace MAUI_MobileApp
 {
@@ -12,13 +13,9 @@ namespace MAUI_MobileApp
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
-
+            builder.Services.AddSingleton<MainPage>();
             return builder.Build();
         }
     }
