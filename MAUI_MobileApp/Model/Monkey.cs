@@ -1,4 +1,6 @@
-﻿namespace MAUI_MobileApp.Model;
+﻿using System.Text.Json.Serialization;
+
+namespace MAUI_MobileApp.Model;
 
 public class Monkey
 {
@@ -11,3 +13,8 @@ public class Monkey
     public double Longitude { get; set; }
 }
 
+[JsonSerializable(typeof(List<Monkey>))]
+internal sealed partial class MonkeyContext : JsonSerializerContext
+{
+
+}

@@ -1,4 +1,5 @@
-﻿using MAUI_MobileApp.View;
+﻿using MAUI_MobileApp.Services;
+using MAUI_MobileApp.View;
 using Microsoft.Extensions.Logging;
 
 namespace MAUI_MobileApp
@@ -15,7 +16,18 @@ namespace MAUI_MobileApp
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
 
+
+#if DEBUG
+            builder.Logging.AddDebug();
+#endif
+
+
+            builder.Services.AddSingleton<MonkeyService>();
+            
+            builder.Services.AddSingleton<MonkeysViewModel>();
+
             builder.Services.AddSingleton<MainPage>();
+
             return builder.Build();
         }
     }

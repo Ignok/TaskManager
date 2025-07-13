@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:MAUI_MobileApp.Model"
+             xmlns:viewmodel="clr-namespace:MAUI_MobileApp.ViewModel"
+             x:DataType="viewmodel:MonkeysViewModel"
+             Title="{Binding Title}"
              x:Class="MAUI_MobileApp.View.MainPage">
 
     <CollectionView>
@@ -30,8 +33,8 @@
                            WidthRequest="100"
                            Aspect="AspectFill"/>
                     <VerticalStackLayout Padding="10" Spacing="4" VerticalOptions="Center">
-                        <Label Text="{Binding Name}" FontSize="24"/>
-                        <Label Text="{Binding Location}" FontSize="10"/>
+                        <Label Text="{Binding Name}" FontSize="24" TextColor="Grey"/>
+                        <Label Text="{Binding Location}" FontSize="10" TextColor="Grey"/>
                     </VerticalStackLayout>
                 </HorizontalStackLayout>
             </DataTemplate>
