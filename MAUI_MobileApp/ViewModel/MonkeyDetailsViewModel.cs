@@ -1,6 +1,14 @@
 ﻿namespace MAUI_MobileApp.ViewModel
 {
+    [QueryProperty("Monkey", "Monkey")]
     public partial class MonkeyDetailsViewModel : BaseViewModel
     {
+        public MonkeyDetailsViewModel()
+        {
+
+        }
+
+        [ObservableProperty]
+        Monkey monkey;
     }
 }

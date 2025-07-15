@@ -13,6 +13,22 @@ namespace MAUI_MobileApp.ViewModel
         }
 
         [RelayCommand]
+        async Task GoToDetailsAsync(Monkey monkey)
+        {
+            if (monkey is null)
+                return;
+
+            // There should be an interface later on so that we won't use Shell directly from the view model
+            await Shell.Current.GoToAsync($"{nameof(DetailsPage)}", true,
+                new Dictionary<string, object>
+                {
+                    {"Monkey", monkey}
+                });
+
+        }
+
+
+        [RelayCommand]
         async Task GetMonkeysAsync()
         {
             if (IsBusy)
