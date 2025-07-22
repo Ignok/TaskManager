@@ -19,6 +19,9 @@ namespace MAUI_MobileApp.ViewModel
             this.geolocation = geolocation;
         }
 
+        [ObservableProperty]
+        bool isRefreshing;
+
         [RelayCommand]
         async Task GetClosestMonkeyAsync()
         {
@@ -130,6 +133,7 @@ namespace MAUI_MobileApp.ViewModel
             finally
             {
                 IsBusy = false;
+                IsRefreshing = false;
             }
         }
     }
